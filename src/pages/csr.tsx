@@ -22,6 +22,8 @@ const Csr: NextPage = () => {
         .order('created_at', { ascending: true })
       setNotices(notices as Notice[])
     }
+    getTasks()
+    getNotices()
   }, [])
   
 
