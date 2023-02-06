@@ -1,7 +1,7 @@
 import { useState, FormEvent } from "react";
 import { CheckBadgeIcon, ShieldCheckIcon } from "@heroicons/react/24/solid";
 import type { NextPage } from "next";
-import { useMutateAuth } from "hooks/useMutateAuth";
+import { useMutateAuth } from "@/hooks/useMutateAuth";
 import { Layout } from "@/components/Layout";
 
 const Auth: NextPage = () => {
