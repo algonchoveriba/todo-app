@@ -1,8 +1,8 @@
-import { useState, FormEvent } from "react";
-import { CheckBadgeIcon, ShieldCheckIcon } from "@heroicons/react/24/solid";
-import type { NextPage } from "next";
-import { useMutateAuth } from "@/hooks/useMutateAuth";
-import { Layout } from "@/components/Layout";
+import { useState, FormEvent } from 'react'
+import { CheckBadgeIcon, ShieldCheckIcon } from '@heroicons/react/24/solid'
+import type { NextPage } from 'next'
+import { useMutateAuth } from '@/hooks/useMutateAuth'
+import { Layout } from '@/components/Layout'
 
 const Auth: NextPage = () => {
   const [isLogin, setIsLogin] = useState(true)
@@ -14,7 +14,7 @@ const Auth: NextPage = () => {
     loginMutation,
     registerMutation,
   } = useMutateAuth()
-  const handleSubmit =async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (isLogin) {
       loginMutation.mutate()
@@ -24,7 +24,7 @@ const Auth: NextPage = () => {
   }
   return (
     <Layout title="Auth">
-      <ShieldCheckIcon className="mb-6 h-12 w12 text-blue-500" />
+      <ShieldCheckIcon className="w12 mb-6 h-12 text-blue-500" />
       <form onSubmit={handleSubmit}>
         <div>
           <input

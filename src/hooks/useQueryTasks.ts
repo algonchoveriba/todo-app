@@ -1,6 +1,6 @@
-import { useQuery } from "@tanstack/react-query"
-import { supabase } from "utils/supabase"
-import { Task } from "types/types"
+import { useQuery } from '@tanstack/react-query'
+import { supabase } from 'utils/supabase'
+import { Task } from 'types/types'
 
 export const useQueryTasks = () => {
   const getTasks = async () => {
@@ -8,7 +8,7 @@ export const useQueryTasks = () => {
       .from('todos')
       .select('*')
       .order('created_at', { ascending: true })
-    
+
     if (error) {
       throw new Error(error.message)
     }

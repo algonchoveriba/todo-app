@@ -1,7 +1,7 @@
-import { NextPage } from "next"
-import { ArrowLeftOnRectangleIcon } from "@heroicons/react/24/solid"
-import { supabase } from "utils/supabase"
-import { Layout } from "@/components/Layout"
+import { NextPage } from 'next'
+import { ArrowLeftOnRectangleIcon } from '@heroicons/react/24/solid'
+import { supabase } from 'utils/supabase'
+import { Layout } from '@/components/Layout'
 
 const Dashboard: NextPage = () => {
   const signOut = () => {

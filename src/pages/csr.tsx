@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react"
-import { NextPage } from "next"
-import { supabase } from "utils/supabase"
-import { Task, Notice } from "types/types"
-import { Layout } from "@/components/Layout"
+import { useEffect, useState } from 'react'
+import { NextPage } from 'next'
+import { supabase } from 'utils/supabase'
+import { Task, Notice } from 'types/types'
+import { Layout } from '@/components/Layout'
 
 const Csr: NextPage = () => {
   const [tasks, setTasks] = useState<Task[]>([])
@@ -25,7 +25,6 @@ const Csr: NextPage = () => {
     getTasks()
     getNotices()
   }, [])
-  
 
   return (
     <Layout title="CSR">

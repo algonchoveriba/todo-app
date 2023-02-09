@@ -1,10 +1,10 @@
-import Link from "next/link"
-import { useRouter } from "next/router"
-import { NextPage } from "next"
-import { GetServerSideProps } from "next"
-import { Layout } from "@/components/Layout"
-import { supabase } from "utils/supabase"
-import { Task, Notice } from "types/types"
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { NextPage } from 'next'
+import { GetServerSideProps } from 'next'
+import { Layout } from '@/components/Layout'
+import { supabase } from 'utils/supabase'
+import { Task, Notice } from 'types/types'
 
 export const getServerSideProps: GetServerSideProps = async () => {
   console.log('getServerSideProps/ssr invoked')
@@ -16,7 +16,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     .from('notices')
     .select('*')
     .order('created_at', { ascending: true })
-  
+
   return { props: { tasks, notices } }
 }
 type StaticProps = {

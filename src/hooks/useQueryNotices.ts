@@ -1,6 +1,6 @@
-import { useQuery } from "@tanstack/react-query"
-import { supabase } from "utils/supabase"
-import { Notice } from "types/types"
+import { useQuery } from '@tanstack/react-query'
+import { supabase } from 'utils/supabase'
+import { Notice } from 'types/types'
 
 export const useQueryNotices = () => {
   const getNotices = async () => {

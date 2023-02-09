@@ -21,4 +21,3 @@ export const Layout: FC<Title> = ({ children, title = 'Todo app' }) => {
     </div>
   )
 }
-

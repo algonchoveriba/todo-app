@@ -1,9 +1,9 @@
-import Link from "next/link"
-import { useRouter } from "next/router"
-import { NextPage, GetStaticProps } from "next"
-import { Layout } from "@/components/Layout"
-import { supabase } from "utils/supabase"
-import { Task, Notice } from "types/types"
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { NextPage, GetStaticProps } from 'next'
+import { Layout } from '@/components/Layout'
+import { supabase } from 'utils/supabase'
+import { Task, Notice } from 'types/types'
 
 export const getStaticProps: GetStaticProps = async () => {
   console.log('getStaticProps/ssg invoked')
@@ -50,8 +50,8 @@ const Ssg: NextPage<StaticProps> = ({ tasks, notices }) => {
       <button className="mb-3 text-xs" onClick={() => router.push('/ssr')}>
         Route to ssr
       </button>
-    </Layout>)
+    </Layout>
+  )
 }
 
 export default Ssg
-

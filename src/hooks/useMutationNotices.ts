@@ -1,14 +1,14 @@
-import { supabase } from "utils/supabase"
-import { useQueryClient, useMutation } from "@tanstack/react-query"
-import useStore from "store"
-import { Notice, EditedNotice } from "types/types"
+import { supabase } from 'utils/supabase'
+import { useQueryClient, useMutation } from '@tanstack/react-query'
+import useStore from 'store'
+import { Notice, EditedNotice } from 'types/types'
 
 export const useMutateNotice = () => {
   const queryClient = useQueryClient()
   const reset = useStore((state) => state.resetEditedNotice)
 
   const createNoticeMutation = useMutation(
-   async (notice: Omit<Notice, 'id' | 'created_at'>) => {
+    async (notice: Omit<Notice, 'id' | 'created_at'>) => {
       const { data, error } = await supabase.from('notices').insert(notice)
       if (error) throw new Error(error.message)
       return data
@@ -56,7 +56,7 @@ export const useMutateNotice = () => {
     }
   )
   const deleteNoticeMutation = useMutation(
-   async (id: string) => {
+    async (id: string) => {
       const { data, error } = await supabase
         .from('notices')
         .select('*')

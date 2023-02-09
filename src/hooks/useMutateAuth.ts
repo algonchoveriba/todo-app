@@ -1,6 +1,6 @@
-import { useState } from "react"
-import { supabase } from "utils/supabase"
-import { useMutation } from "@tanstack/react-query"
+import { useState } from 'react'
+import { supabase } from 'utils/supabase'
+import { useMutation } from '@tanstack/react-query'
 
 export const useMutateAuth = () => {
   const [email, setEmail] = useState('')
@@ -11,7 +11,10 @@ export const useMutateAuth = () => {
   }
   const loginMutation = useMutation(
     async () => {
-      const { error } = await supabase.auth.signInWithPassword({ email, password })
+      const { error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      })
       if (error) throw new Error(error.message)
     },
     {
