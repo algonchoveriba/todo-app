@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: {
-    appDir: true,
+
+module.exports = {
+  reactStrictMode: true,
+  webpack: (config) => {
+    config.experiments = {
+      topLevelAwait: true,
+    }
+    return config
   },
 }
-
-module.exports = nextConfig
