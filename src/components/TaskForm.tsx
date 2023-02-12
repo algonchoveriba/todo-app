@@ -3,10 +3,20 @@ import { supabase } from 'utils/supabase'
 import useStore from 'store'
 import { useMutateTask } from '@/hooks/useMutateTask'
 
-const { data: users } = await supabase.auth.getUser()
-const user = users
-console.log(user)
 export const TaskForm: FC = () => {
+  const getUserID = async () => {
+    // 要修正
+    const {
+      data: { user },
+    } = await supabase.auth.getUser()
+    console.log(user)
+    const u_id = user?.id
+    console.log(u_id)
+    return u_id
+  }
+  const userID = getUserID()
+
+  console.log(Promise)
   const { editedTask } = useStore()
   const update = useStore((state) => state.updateEditedTask)
   const { createTaskMutation, updateTaskMutation } = useMutateTask()
@@ -15,7 +25,8 @@ export const TaskForm: FC = () => {
     if (editedTask.id === '')
       createTaskMutation.mutate({
         title: editedTask.title,
-        user_id: user.user?.id,
+        // 要修正
+        user_id: '',
       })
     else {
       updateTaskMutation.mutate({
