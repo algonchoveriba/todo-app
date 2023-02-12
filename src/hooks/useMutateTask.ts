@@ -10,6 +10,8 @@ export const useMutateTask = () => {
   const createTaskMutation = useMutation(
     async (task: Omit<Task, 'id' | 'created_at'>) => {
       const { data, error } = await supabase.from('todos').insert(task)
+      console.log({ task })
+
       if (error) throw new Error(error.message)
       return data
     },
@@ -19,10 +21,12 @@ export const useMutateTask = () => {
         if (previousTodos) {
           queryClient.setQueryData(['todos'], [...previousTodos, res[0]])
         }
+        console.log('success')
         reset()
       },
       onError: (err: any) => {
         alert(err.message)
+        console.log('fail')
         reset()
       },
     }
